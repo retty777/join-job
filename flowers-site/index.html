@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Цветочная лавка — Букеты с доставкой</title>
+  <meta name="description" content="Красивые букеты с доставкой по городу. Закажите онлайн: каталоги, цены, быстрая доставка." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <img src="assets/flower-logo.svg" alt="Логотип" />
+        <span>Цветочная лавка</span>
+      </div>
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#about">О нас</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#order">Заказать</a>
+      </nav>
+      <a class="btn primary" href="#order">Оформить заказ</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Букеты, которые говорят за вас</h1>
+        <p>Собираем свежие композиции и доставляем в день заказа. Выберите букет — остальное сделаем мы.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="#catalog">Смотреть каталог</a>
+          <a class="btn ghost" href="#order">Быстрый заказ</a>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <main>
+    <section id="catalog" class="section">
+      <div class="container">
+        <h2>Каталог букетов</h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="Поиск по названию или цветку" aria-label="Поиск по каталогу" />
+          <select id="sort" aria-label="Сортировка">
+            <option value="popular">Сначала популярные</option>
+            <option value="price-asc">Цена: по возрастанию</option>
+            <option value="price-desc">Цена: по убыванию</option>
+          </select>
+        </div>
+        <div id="cards" class="cards" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>О нас</h2>
+        <p>Мы — студия флористики, которая ценит качество и эмоции. Работаем с проверенными поставщиками, используем только свежие цветы и заботимся о каждой детали.</p>
+        <ul class="bullets">
+          <li>Свежесть — ежедневные поставки</li>
+          <li>Доставка в день заказа</li>
+          <li>Индивидуальные пожелания по цветам и оформлению</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="delivery" class="section">
+      <div class="container">
+        <h2>Доставка и оплата</h2>
+        <div class="grid two">
+          <div>
+            <h3>Доставка</h3>
+            <p>По городу — от 1 до 3 часов. Самовывоз бесплатно из нашей мастерской.</p>
+          </div>
+          <div>
+            <h3>Оплата</h3>
+            <p>Картой онлайн, переводом или наличными при получении.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order" class="section alt">
+      <div class="container">
+        <h2>Оформление заказа</h2>
+        <form id="order-form" class="order-form" novalidate>
+          <div class="grid two">
+            <label>
+              <span>Ваше имя</span>
+              <input type="text" name="name" placeholder="Иван" required />
+            </label>
+            <label>
+              <span>Телефон</span>
+              <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required />
+            </label>
+          </div>
+          <div class="grid two">
+            <label>
+              <span>Выбранный букет</span>
+              <input type="text" name="product" id="product" placeholder="Например, Розовый рассвет" required />
+            </label>
+            <label>
+              <span>Дата и время</span>
+              <input type="datetime-local" name="datetime" required />
+            </label>
+          </div>
+          <label>
+            <span>Адрес доставки</span>
+            <input type="text" name="address" placeholder="Улица, дом, подъезд, домофон" required />
+          </label>
+          <label>
+            <span>Комментарий</span>
+            <textarea name="comment" rows="3" placeholder="Пожелания к записке, упаковке и т.д."></textarea>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Отправить заявку</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Цветочная лавка</strong>
+        <p>Ежедневно 9:00–21:00</p>
+      </div>
+      <div class="footer-links">
+        <a href="tel:+79990000000">+7 (999) 000-00-00</a>
+        <a href="mailto:order@flowers.example">order@flowers.example</a>
+        <a href="#">VK</a>
+        <a href="#">Telegram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
